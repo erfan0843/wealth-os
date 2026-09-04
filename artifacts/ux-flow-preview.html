@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UX Flow Preview — Wealth OS</title>
+<style>
+  :root{--bg:#F6F7F9;--surface:#fff;--surAlt:#F1F2F5;--t1:#1A1C1E;--t2:#6B7178;--t3:#9AA0A6;--primary:#135F56;--primarySoft:#E2F0ED;--success:#1F9D61;--error:#D14D4D;--border:#E8EAED;--rMd:12px;--rLg:16px;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Vazirmatn","Segoe UI",Tahoma,sans-serif;background:var(--bg);color:var(--t1);padding:24px;line-height:1.7;font-size:14px}
+  .wrap{max-width:1060px;margin:0 auto}
+  h1{font-size:24px;font-weight:800;margin-bottom:4px}
+  .sub{color:var(--t2);font-size:13px;margin-bottom:22px}
+  h2{font-size:18px;font-weight:700;margin:26px 0 14px;display:flex;align-items:center;gap:8px}
+  .h2bar{width:5px;height:20px;background:var(--primary);border-radius:4px}
+  .phone{width:340px;background:var(--surface);border:1px solid var(--border);border-radius:26px;box-shadow:0 10px 30px rgba(19,95,86,.09);display:flex;flex-direction:column;min-height:600px;overflow:hidden}
+  .phoneHead{padding:16px 18px 6px;display:flex;justify-content:space-between;align-items:center}
+  .phoneHead .name{font-weight:700;font-size:16px}
+  .phoneHead .icons{display:flex;gap:10px;color:var(--t3);font-size:15px}
+  .phoneBody{padding:12px 16px;flex:1}
+  .hero{background:var(--primary);color:#fff;border-radius:var(--rLg);padding:16px;position:relative}
+  .hero .l{font-size:12px;opacity:.85}
+  .hero .v{font-size:28px;font-weight:800;letter-spacing:-.5px}
+  .hero .d{sub;font-size:12px;background:rgba(255,255,255,.18);display:inline-block;padding:2px 8px;border-radius:999px;margin-top:4px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+  .mini{background:rgba(255,255,255,.14);border-radius:10px;padding:8px 10px}
+  .mini .l{font-size:11px;opacity:.85}
+  .mini .v{font-size:16px;font-weight:700}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--rLg);padding:14px;margin-top:10px}
+  .card .t{font-size:12px;color:var(--t2);margin-bottom:4px}
+  .card .rn{font-size:14px;font-weight:700}
+  .mon{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:13px}
+  .mon:last-child{border-bottom:none}
+  .mon .dow{color:var(--error)}
+  .mon .up{color:var(--success)}
+  .spark{width:۱۰۰%;height:34px;margin-top:6px}
+  .nav{display:flex;align-items:center;justify-content:space-around;background:var(--surface);border-top:1px solid var(--border);padding:8px 12px}
+  .nav .it{display:flex;flex-direction:column;align-items:center;gap:1px;font-size:11px;color:var(--t3)}
+  .nav .it.on{color:var(--primary);font-weight:700}
+  .nav .fab{width:50px;height:50px;border-radius:۵۰%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;margin-top:-22px;box-shadow:0 6px 16px rgba(19,95,86,.35)}
+  .qadd{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:10px 0}
+  .qadd .chip{background:var(--surAlt);border:1px solid var(--border);border-radius:999px;padding:8px 14px;font-size:13px;font-weight:600}
+  .qadd .chip.hi{background:var(--primarySoft);color:var(--primary);border-color:var(--primarySoft)}
+  .field{background:var(--surAlt);border:1px solid var(--border);border-radius:var(--rMd);padding:10px 12px;margin-bottom:10px}
+  .field .l{font-size:11px;color:var(--t2)}
+  .field .v{font-size:16px;font-weight:700}
+  .field .unit{font-size:12px;color:var(--t3);margin-inline-start:4px}
+  .cta{width:۱۰۰%;background:var(--primary);color:#fff;border:none;border-radius:var(--rMd);padding:13px;font-weight:700;font-size:15px;font-family:inherit;margin-top:8px}
+  .tabs{
+    --tabs h2 margin-top:20px;
+  }
+  .screens{display:flex;gap:22px;flex-wrap:wrap;justify-content:center;align-items:flex-start}
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+  .kpi{background:var(--surface);border:1px solid var(--border);border-radius:var(--rLg);padding:14px}
+  .kpi .l{font-size:12px;color:var(--t2)}
+  .kpi .v{font-size:22px;font-weight:800}
+  .bar{height:8px;border-radius:999px;background:var(--surAlt);overflow:hidden;margin-top:6px}
+  .bar i{display:block;height:۱۰۰%;background:var(--primary);border-radius:999px}
+  .legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .legend .dot{width:10px;height:10px;border-radius:۵۰%;display:inline-block}
+  .pill{font-size:11px;padding:3px 9px;border-radius:999px;font-weight:600}
+  .pill.g{background:#E3F5EB;color:var(--success)} .pill.o{background:#FBEFD8;color:#c98a1e}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>جریان‌های UX — Wealth OS</h1>
+  <div class="sub">فاز ۵ · نمونهٔ تعاملی اسکرین‌های اصلی (فونت Vazirmatn در اپ از Assets اضافه می‌شود)</div>
+
+  <h2><span class="h2bar"></span>Dashboard</h2>
+  <div class="screens">
+    <div class="phone">
+      <div class="phoneHead"><span class="name">سلام، علی 👋</span><span class="icons">🔍 🔔 👤</span></div>
+      <div class="phoneBody">
+        <div class="hero">
+          <div class="l">دارایی خالص</div>
+          <div class="v">۹۲۰٬۰۰۰٬۰۰۰</div>
+          <span class="d" style="font-size:12px;background:rgba(255,255,255,.18);display:inline-block;padding:2px 8px;border-radius:999px;margin-top:6px">▲ ۲٫۱٪</span>
+          <div class="row2">
+            <div class="mini"><div class="l">کل دارایی</div><div class="v">۱٫۲۵۰M</div></div>
+            <div class="mini"><div class="l">کل بدهی</div><div class="v">۴۸M</div></div>
+          </div>
+        </div>
+        <div class="card"><div class="t">این ماه</div>
+          <div class="mon"><span>درآمد</span><span class="up">۲۵٬۰۰۰٬۰۰۰</span></div>
+          <div class="mon"><span>هزینه</span><span class="dow">۱۸٬۵۰۰٬۰۰۰</span></div>
+          <svg class="spark" viewBox="0 0 300 34" preserveAspectRatio="none"><polyline points="0,28 30,24 60,26 90,18 120,20 150,14 180,16 210,9 240,11 270,5 300,7" fill="none" stroke="#135F56" stroke-width="2.4"/></svg>
+        </div>
+        <div class="grid2">
+          <div class="kpi"><div class="l">نقدینگی</div><div class="v">۲۴۵M</div></div>
+          <div class="kpi"><div class="l">بدهی</div><div class="v">۴۸M</div></div>
+        </div>
+        <div class="card"><div class="t">تعهدات ۳۰ روز</div>
+          <div class="mon"><span>🔔 قسط دیجی‌پای</span><span>۲M · ۵ روز</span></div>
+          <div class="mon"><span>🔔 چک دریافتی</span><span>۳M · ۹ روز</span></div>
+        </div>
+      </div>
+      <div class="nav"><div class="it on">●خانه</div><div class="it">≡تراکنش‌ها</div><div class="fab">+</div><div class="it">◈دارایی‌ها</div><div class="it">◉آینده</div></div>
+    </div>
+  </div>
+
+  <h2><span class="h2bar"></span>Quick Add — ثبت هزینه (<۵s)</h2>
+  <div class="screens">
+    <div class="phone">
+      <div class="phoneBody">
+        <div class="qadd">
+          <span class="chip">درآمد</span><span class="chip hi">هزینه</span><span class="chip">انتقال</span>
+          <span class="chip">خرید دارایی</span><span class="chip">فروش دارایی</span>
+          <span class="chip">بدهی/طلب</span><span class="chip">وام/قسط</span><span class="chip">چک</span>
+        </div>
+        <div class="field"><div class="l">مبلغ</div><div class="v">۳۵۰٬۰۰۰<span class="unit">تومان</span></div></div>
+        <div class="field"><div class="l">بابت چه؟</div><div class="v">ناهار</div></div>
+        <div class="field"><div class="l">از حساب</div><div class="v">بانک ملت ▾</div></div>
+        <div style="font-size:12px;color:var(--t2)">▾ جزئیات بیشتر (دسته / تاریخ / تگ / یادداشت)</div>
+        <button class="cta">ثبت ✓</button>
+      </div>
+    </div>
+  </div>
+
+  <h2><span class="h2bar"></span>Asset Detail</h2>
+  <div class="screens">
+    <div class="phone">
+      <div class="phoneHead"><span class="name">🏆 نقره</span><span class="icons">🖉</span></div>
+      <div class="phoneBody">
+        <div class="hero">
+          <div class="l">ارزش فعلی</div><div class="v">۹٫۵۰۰٬۰۰۰</div>
+          <span class="d" style="font-size:12px;background:rgba(255,255,255,.18);display:inline-block;padding:2px 8px;border-radius:999px;margin-top:6px">سود تغییریافته +۴٪ (+۳۶۵ هزار)</span>
+        </div>
+        <div class="card"><div class="t">هزینهٔ تمام‌شده (میانگین)</div><div class="rn">۲٬۰۸۰٬۰۰۰ تومان/گرم</div></div>
+        <div class="card"><div class="t">سهم‌های خرید</div>
+          <div class="mon"><span>سهم ۱ · ۱۰۰ گرم</span><span>@ ۲٬۰۰۰٬۰۰۰</span></div>
+          <div class="mon"><span>سهم ۲ · ۱۵۰ گرم</span><span>@ ۲٬۱۲۰٬۰۰۰</span></div>
+        </div>
+        <div class="card"><div class="t">تاریخچهٔ قیمت</div><svg class="spark" viewBox="0 0 300 34" preserveAspectRatio="none"><polyline points="0,24 30,22 60,26 90,18 120,20 150,12 180,15 210,8 240,10 270,6 300,8" fill="none" stroke="#135F56" stroke-width="2.4"/></svg></div>
+        <button class="cta">+ خرید &nbsp;&nbsp;|&nbsp;&nbsp; فروش</button>
+      </div>
+    </div>
+  </div>
+
+  <h2><span class="h2bar"></span>Future / Forecast</h2>
+  <div class="screens">
+    <div class="phone">
+      <div class="phoneHead"><span class="name">آینده</span><span class="icons">🔔</span></div>
+      <div class="phoneBody">
+        <div class="card"><div class="t" style="margin-bottom:6px">جریان نقدی ۳۰ روز</div>
+          <div class="mon"><span>ورود</span><span class="up">+۴۵M</span></div>
+          <div class="mon"><span>خروج</span><span class="dow">−۲۸M</span></div>
+          <div class="mon"><span>خالص</span><span class="up">+۱۷M</span></div>
+        </div>
+        <div class="card"><div class="t">تقویم تعهدات</div>
+          <div class="mon"><span>۱۷ شهریور · قسط دیجی‌پای</span><span>۲M</span></div>
+          <div class="mon"><span>۲۱ شهریور · چک دریافتی</span><span>۳M</span></div>
+          <div class="mon"><span>۲۴ شهریور · بدهی [فلانی]</span><span>۱M</span></div>
+          <div class="mon"><span>۲۹ شهریور · اجاره (مکرر)</span><span>۱۲M</span></div>
+        </div>
+      </div>
+      <div class="nav"><div class="it">●خانه</div><div class="it">≡تراکنش‌ها</div><div class="fab">+</div><div class="it">◈دارایی‌ها</div><div class="it on">◉آینده</div></div>
+    </div>
+  </div>
+
+  <h2><span class="h2bar"></span>گزارش «پولم کجا رفت؟»</h2>
+  <div class="screens">
+    <div class="phone">
+      <div class="phoneHead"><span class="name">پولم کجا رفت؟</span><span class="icons">ای ماه ▾</span></div>
+      <div class="phoneBody">
+        <div class="card">
+          <div class="t">توزیع مخارج</div>
+          <div class="bar"><i style="width:۷۰%"></i></div><div class="mon"><span>خوراک</span><span>۷M</span></div>
+          <div class="bar"><i style="width:۵۰%"></i></div><div class="mon"><span>حمل‌ونقل</span><span>۳M</span></div>
+          <div class="bar"><i style="width:۴۲%"></i></div><div class="mon"><span>خرید</span><span>۵M</span></div>
+        </div>
+        <div class="card"><div class="t">معادل واحد مرجع (گرم نقره · قیمت همان زمان)</div><div class="rn">۴۲ گرم</div></div>
+        <div class="card"><div class="t">تخصیص دارایی</div><div class="legend"><span class="pill g">نقدینگی</span><span class="pill">طلا/نقره</span><span class="pill">سرمایه‌گذاری</span></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

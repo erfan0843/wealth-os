@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design System — Wealth OS</title>
+<style>
+  :root{
+    /* light semantics */
+    --bg:#F6F7F9; --surface:#FFFFFF; --surfaceAlt:#F1F2F5;
+    --t1:#1A1C1E; --t2:#6B7178; --t3:#9AA0A6;
+    --primary:#135F56; --primarySoft:#E2F0ED; --onPrimary:#FFFFFF;
+    --success:#1F9D61; --warning:#E0A03C; --error:#D14D4D;
+    --successSoft:#E3F5EB; --warningSoft:#FBEFD8; --errorSoft:#FBE6E6;
+    --border:#E8EAED; --grid:#ECEEF1;
+    --accent:#135F56;
+    --rSm:8px; --rMd:12px; --rLg:16px; --rXl:24px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:"Vazirmatn",-apple-system,"Segoe UI",Tahoma,"Iranian Sans",sans-serif;
+    background:var(--bg); color:var(--t1); padding:28px 22px; line-height:1.7; font-size:15px;
+  }
+  .wrap{max-width:1180px;margin:0 auto}
+  h1{font-size:26px;font-weight:800;margin-bottom:4px}
+  .sub{color:var(--t2);font-size:14px;margin-bottom:26px}
+  section{margin-bottom:34px}
+  h2{font-size:20px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+  .h2bar{width:5px;height:22px;background:var(--primary);border-radius:4px}
+  .palette{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+  .swatch{border-radius:var(--rMd);padding:14px;border:1px solid var(--border)}
+  .swatch .name{font-size:12px;opacity:.82;font-weight:600}
+  .swatch .hex{font-size:11px;opacity:.65;direction:ltr;text-align:right}
+  .grid-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+  .card{background:var(--surface);border-radius:var(--rLg);padding:18px;border:1px solid var(--border);box-shadow:0 2px 10px rgba(19,95,86,.05)}
+  .card .lbl{font-size:12px;color:var(--t2)}
+  .big{font-size:34px;font-weight:800;letter-spacing:-.5px;font-feature-settings:"tnum"}
+  .delta{font-size:13px;font-weight:700}
+  .up{color:var(--success)} .down{color:var(--error)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:none;border-radius:var(--rMd);padding:12px 20px;font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;min-height:48px}
+  .btn.primary{background:var(--primary);color:var(--onPrimary)}
+  .btn.secondary{background:var(--surface);color:var(--t1);border:1px solid var(--border)}
+  .btn.soft{background:var(--primarySoft);color:var(--primary)}
+  .btn.ghost{background:transparent;color:var(--t2)}
+  .btn.danger{background:var(--error);color:#fff}
+  .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .field{background:var(--surface);border:1px solid var(--border);border-radius:var(--rMd);padding:12px 14px;min-width:220px}
+  .field .flabel{font-size:12px;color:var(--t2);margin-bottom:2px}
+  .field .fvalue{font-size:16px;font-weight:700;color:var(--t1)}
+  .field .funit{margin-inline-start:6px;font-size:13px;color:var(--t3)}
+  .metric{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;background:var(--surface);border-radius:var(--rLg);padding:18px;border:1px solid var(--border)}
+  .metric .m .v{font-size:22px;font-weight:800}
+  .metric .m .l{font-size:12px;color:var(--t2)}
+  .nav{display:flex;align-items:center;justify-content:space-around;background:var(--surface);border-radius:var(--rXl);padding:10px 14px;border:1px solid var(--border);box-shadow:0 4px 18px rgba(19,95,86,.08)}
+  .nav .item{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;color:var(--t2)}
+  .nav .item.on{color:var(--primary);font-weight:700}
+  .nav .fab{width:56px;height:56px;border-radius:۵۰%;background:var(--primary);color:var(--onPrimary);display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:700;margin-top:-26px;box-shadow:0 6px 18px rgba(19,95,86,.35)}
+  .chip{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;font-size:13px;background:var(--surfaceAlt);border:1px solid var(--border)}
+  .chip.on{background:var(--primarySoft);color:var(--primary);border-color:var(--primarySoft)}
+  .badge{font-size:11px;padding:3px 9px;border-radius:999px;font-weight:600}
+  .badge.success{background:var(--successSoft);color:var(--success)}
+  .badge.warning{background:var(--warningSoft);color:var(--warning)}
+  .badge.error{background:var(--errorSoft);color:var(--error)}
+  .spark{width:۱۰۰%;height:36px}
+  .demo-grid{display:grid;grid-template-columns:1fr;gap:26px}
+  @media(min-width:820px){.demo-grid{grid-template-columns:1fr 1fr}}
+  .types{margin-bottom:6px}
+  .types p{font-size:14px;margin:6px 0}
+  .types .cap{font-size:11px;color:var(--t3)}
+  .darkbadge{display:inline-block;font-size:11px;background:var(--t1);color:#fff;padding:4px 10px;border-radius:999px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>نظام طراحی — Wealth OS</h1>
+  <div class="sub">Design System · فاز ۴ · نمونهٔ مرجع (Vazirmatn در اپ از Assets اضافه می‌شود)</div>
+
+  <section>
+    <h2><span class="h2bar"></span>Colors — روشن</h2>
+    <div class="palette">
+      <div class="swatch" style="background:#F6F7F9"><div class="name">Background</div><div class="hex">#F6F7F9</div></div>
+      <div class="swatch" style="background:#FFFFFF;border-color:#ddd"><div class="name">Surface</div><div class="hex">#FFFFFF</div></div>
+      <div class="swatch" style="background:#F1F2F5"><div class="name">SurfaceAlt</div><div class="hex">#F1F2F5</div></div>
+      <div class="swatch" style="background:#1A1C1E;color:#fff"><div class="name">TextPrimary</div><div class="hex">#1A1C1E</div></div>
+      <div class="swatch" style="background:#6B7178;color:#fff"><div class="name">TextSecondary</div><div class="hex">#6B7178</div></div>
+      <div class="swatch" style="background:#135F56;color:#fff"><div class="name">Primary</div><div class="hex">#135F56</div></div>
+      <div class="swatch" style="background:#E2F0ED"><div class="name">PrimarySoft</div><div class="hex">#E2F0ED</div></div>
+      <div class="swatch" style="background:#1F9D61;color:#fff"><div class="name">Success</div><div class="hex">#1F9D61</div></div>
+      <div class="swatch" style="background:#E0A03C;color:#fff"><div class="name">Warning</div><div class="hex">#E0A03C</div></div>
+      <div class="swatch" style="background:#D14D4D;color:#fff"><div class="name">Error</div><div class="hex">#D14D4D</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="h2bar"></span>Components</h2>
+
+    <div style="margin-bottom:18px">
+      <div class="lbl" style="margin-bottom:8px;color:var(--t2);font-size:13px">کارت شاخص (سنجه / دارایی خالص)</div>
+      <div class="metric">
+        <div class="m"><div class="v">۱٫۲۵۰٫۰۰۰٫۰۰۰</div><div class="l">دارایی خالص</div><div class="delta up">▲ ۲٫۱٪</div></div>
+        <div class="m"><div class="v">۲۴۵٫۰۰۰٫۰۰۰</div><div class="l">نقدینگی</div></div>
+        <div class="m"><div class="v">۴۸٫۰۰۰٫۰۰۰</div><div class="l">بدهی</div></div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:18px">
+      <div class="lbl" style="margin-bottom:8px;color:var(--t2);font-size:13px">Hero کارت (عدد بزرگ)</div>
+      <div class="card">
+        <div class="lbl">دارایی خالص</div>
+        <div class="big">۹۲۰٬۰۰۰٬۰۰۰ <span style="font-size:14px;color:var(--t3);font-weight:500">تومان</span></div>
+        <div style="margin-top:6px"><span class="badge success">▲ ۲٫۱٪ این ماه</span></div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:18px">
+      <div class="lbl" style="margin-bottom:8px;color:var(--t2);font-size:13px">دکمه‌ها</div>
+      <div class="row">
+        <button class="btn primary">ثبت درآمد</button>
+        <button class="btn secondary">حساب‌ها</button>
+        <button class="btn soft">دارایی‌ها</button>
+        <button class="btn ghost">لغو</button>
+        <button class="btn danger">حذف</button>
+      </div>
+    </div>
+
+    <div style="margin-bottom:18px">
+      <div class="lbl" style="margin-bottom:8px;color:var(--t2);font-size:13px">ورودی مبلغ / فیلد</div>
+      <div class="row">
+        <div class="field"><div class="flabel">مبلغ</div><div class="fvalue">۳۵۰٬۰۰۰<span class="funit">تومان</span></div></div>
+        <div class="field"><div class="flabel">از حساب</div><div class="fvalue">بانک ملت</div></div>
+        <div class="row" style="gap:6px">
+          <span class="chip on"># سفر</span><span class="chip"># خانواده</span><span class="chip"># کسب‌وکار</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:18px">
+      <div class="lbl" style="margin-bottom:8px;color:var(--t2);font-size:13px">Badge‌ها</div>
+      <div class="row">
+        <span class="badge success">سود</span>
+        <span class="badge warning">هشدار بودجه</span>
+        <span class="badge error">ضرر</span>
+        <span class="badge success">پرداخت شد</span>
+        <span class="badge warning">در انتظار</span>
+        <span class="badge error">چک برگشتی</span>
+      </div>
+    </div>
+
+    <div style="margin-bottom:18px">
+      <div class="lbl" style="margin-bottom:10px;color:var(--t2);font-size:13px">ناوبری پایین (با دکمهٔ مرکزی +)</div>
+      <div class="nav">
+        <div class="item on">● خانه</div>
+        <div class="item">≡ تراکنش‌ها</div>
+        <div class="fab">+</div>
+        <div class="item">◈ دارایی‌ها</div>
+        <div class="item">◉ آینده</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="h2bar"></span>Charts</h2>
+    <div class="demo-grid">
+      <div class="card">
+        <div class="lbl">رشد دارایی خالص</div>
+        <svg class="spark" viewBox="0 0 300 40" preserveAspectRatio="none">
+          <polyline points="0,32 30,28 60,30 90,22 120,24 150,18 180,20 210,12 240,14 270,8 300,10" fill="none" stroke="#135F56" stroke-width="2.4"/>
+        </svg>
+        <div style="font-size:12px;color:var(--t2);margin-top:4px">۶ ماه · به تومان</div>
+      </div>
+      <div class="card">
+        <div class="lbl">تخصیص دارایی</div>
+        <div style="display:flex;align-items:center;gap:18px;margin-top:8px">
+          <svg width="90" height="90" viewBox="0 0 42 42">
+            <circle cx="21" cy="21" r="15.9" fill="none" stroke="#135F56" stroke-width="7"/>
+            <circle cx="21" cy="21" r="15.9" fill="none" stroke="#5BC2AE" stroke-width="7" stroke-dasharray="40 100" stroke-dashoffset="-15"/>
+            <circle cx="21" cy="21" r="15.9" fill="none" stroke="#E0A03C" stroke-width="7" stroke-dasharray="25 100" stroke-dashoffset="-55"/>
+          </svg>
+          <div style="font-size:12px;color:var(--t2)">نقدینگی · طلا/نقره · سرمایه‌گذاری</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="h2bar"></span>Typography</h2>
+    <div class="types">
+      <p style="font-size:34px;font-weight:800">نمایش (Display) — ۹۲۰٬۰۰۰٬۰۰۰</p>
+      <p class="cap">display / وزن 800 / برای عدد بزرگ دارایی</p>
+      <p style="font-size:26px;font-weight:700">تیتر بزرگ (Headline)</p>
+      <p class="cap">headline / 700</p>
+      <p style="font-size:20px;font-weight:600">عنوان (Title) — این ماه</p>
+      <p class="cap">title / 600</p>
+      <p style="font-size:15px">متن اصلی (Body)</p>
+      <p class="cap">body / 400</p>
+      <p style="font-size:14px;font-weight:600">برچسب (Label)</p>
+      <p class="cap">label / 600</p>
+      <p style="font-size:12px;color:var(--t3)">زیرنویس (Caption) · آخرین بروزرسانی</p>
+      <p class="cap">caption / 400</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="h2bar"></span>بازه‌های فاصله / شعاع</h2>
+    <div class="row">
+      <div style="width:4px;height:24px;background:var(--primary);border-radius:2px"></div>
+      xs 4
+      <div style="width:8px;height:24px;background:var(--primary);border-radius:2px"></div>
+      sm 8
+      <div style="width:12px;height:24px;background:var(--primary);border-radius:2px"></div>
+      md 12
+      <div style="width:16px;height:24px;background:var(--primary);border-radius:2px"></div>
+      lg 16
+      <div style="width:24px;height:24px;background:var(--primary);border-radius:2px"></div>
+      xl 24
+    </div>
+    <div class="row" style="margin-top:14px">
+      <div style="background:var(--primarySoft);width:60px;height:40px;border-radius:8px"></div> rSm 8
+      <div style="background:var(--primarySoft);width:60px;height:40px;border-radius:12px"></div> rMd 12
+      <div style="background:var(--primarySoft);width:60px;height:40px;border-radius:16px"></div> rLg 16
+      <div style="background:var(--primarySoft);width:60px;height:40px;border-radius:24px"></div> rXl 24
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="h2bar"></span>وضعیتِ خالی (نمونه)</h2>
+    <div class="card" style="text-align:center;padding:40px 20px">
+      <div style="font-size:40px;margin-bottom:10px">🏺</div>
+      <div style="font-size:18px;font-weight:700;margin-bottom:6px">هنوز دارایی نداری</div>
+      <div style="color:var(--t2);font-size:14px;margin-bottom:16px">اولین دارایی‌ات رو اضافه کن تا وضعیت ثروتت رو ببینی.</div>
+      <button class="btn primary">+ اولین دارایی</button>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="h2bar"></span>تیره</h2>
+    <div style="background:#0E1213;border-radius:24px;padding:20px;color:#F0F2F3">
+      <div class="lbl" style="color:#A6ADB3">دارایی خالص · تیره</div>
+      <div style="font-size:34px;font-weight:800">۹۲۰٬۰۰۰٬۰۰۰ <span style="font-size:14px;color:#6C737A;font-weight:500">تومان</span></div>
+      <div style="margin-top:8px"><span class="badge success">▲ ۲٫۱٪</span></div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

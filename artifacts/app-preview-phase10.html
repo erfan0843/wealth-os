@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>پیش‌نمایش فاز ۱۰ — قیمت‌گذاری و کارمزد</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;800&display=swap');
+  :root{
+    --bg:#f5f5f7; --bg-dark:#121417; --sg:#e9ecf0; --sg-d:#1e2228;
+    --txt:#1a1c1e; --txt-d:#e8eaed; --txt2:#6b7178; --txt2-d:#9aa2ab;
+    --p:#135f56; --p2:#1f9d61; --gold:#c9a227; --err:#d9534f; --wl:#fdf6e3;
+  }
+  *{box-sizing:border-box; font-family:'Vazirmatn',Vazir,system-ui,sans-serif;}
+  body{margin:0; background:var(--bg); color:var(--txt);}
+  .dark body{background:var(--bg-dark); color:var(--txt-d);}
+  .wrap{max-width:430px; margin:0 auto; padding:20px 18px 90px;}
+  .top{display:flex; align-items:center; gap:12px; margin-bottom:18px;}
+  .top .t{flex:1;}
+  .top h1{font-size:18px; font-weight:800; margin:0;}
+  .top p{margin:2px 0 0; font-size:12px; color:var(--txt2);}
+  .badge{font-size:11px; font-weight:700; padding:4px 10px; border-radius:999px; background:var(--p); color:#fff;}
+  .card{background:#fff; border-radius:18px; padding:16px; box-shadow:0 2px 12px rgba(0,0,0,.05); margin-bottom:14px;}
+  .dark .card{background:var(--sg-d);}
+  .card .h{display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;}
+  .card .h h2{font-size:15px; font-weight:700; margin:0;}
+  .card .h .more{font-size:12px; color:var(--p);}
+  .seg{display:flex; gap:6px; background:var(--sg); border-radius:999px; padding:4px; margin-bottom:16px;}
+  .dark .seg{background:#20262d;}
+  .seg span{flex:1; text-align:center; padding:7px; font-size:12.5px; font-weight:600; border-radius:999px; cursor:pointer; color:var(--txt2);}
+  .dark .seg span{color:var(--txt2-d);}
+  .seg .on{background:var(--p); color:#fff;}
+  .label{font-size:12px; color:var(--txt2); display:flex; justify-content:space-between; align-items:center;}
+  .dark .label{color:var(--txt2-d);}
+  .big{font-size:26px; font-weight:800; margin:2px 0;}
+  .sub{font-size:11.5px; color:var(--txt2);}
+  .dark .sub{color:var(--txt2-d);}
+  .row{display:flex; align-items:center; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--sg);}
+  .dark .row{border-color:#2a313a;}
+  .row:last-child{border-bottom:none;}
+  .row .nm{font-size:13.5px; font-weight:600;}
+  .row .dt{font-size:11.5px; color:var(--txt2); margin-top:2px;}
+  .dark .row .dt{color:var(--txt2-d);}
+  .val{font-size:13px; font-weight:700; color:var(--p);}
+  .pct{font-size:12px; font-weight:700; color:var(--p);}
+  .stale{font-size:10.5px; color:#b8860b; background:var(--wl); border:1px solid #e8d9a8; padding:2px 8px; border-radius:999px;}
+  .live{font-size:10.5px; color:#1f9d61; background:#e7f6ee; padding:2px 8px; border-radius:999px;}
+  .manual{font-size:10.5px; color:var(--p); background:#e2f0ee; padding:2px 8px; border-radius:999px;}
+  .bar{height:8px; border-radius:999px; background:var(--sg); overflow:hidden; margin:8px 0 4px;}
+  .dark .bar{background:#2a313a;}
+  .bar i{display:block; height:100%; background:linear-gradient(90deg,var(--p),var(--p2)); border-radius:999px;}
+  .foot{position:fixed; left:0; right:0; bottom:0; height:68px; background:#fff; border-top:1px solid var(--sg); display:flex; align-items:center; justify-content:space-around; max-width:430px; margin:0 auto;}
+  .dark .foot{background:var(--sg-d); border-color:#2a313a;}
+  .foot .ni{text-align:center; font-size:10.5px; color:var(--txt2);}
+  .dark .foot .ni{color:var(--txt2-d);}
+  .foot .ni .ic{font-size:20px;}
+  .foot .ni.on{color:var(--p); font-weight:700;}
+  .note{font-size:11px; color:var(--txt2); background:#fdfbea; border:1px solid #efe6b8; border-radius:12px; padding:10px 12px; margin-top:4px; line-height:1.9;}
+  .dark .note{background:#2a251a; border-color:#4a3f22; color:var(--txt2-d);}
+</style>
+</head>
+<body>
+<svg style="display:none"><symbol id="ic-home" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3 3 11h3v8h5v-5h2v5h5v-8h3z"/></symbol></svg>
+<div class="wrap">
+  <div class="top">
+    <div class="t"><h1>قیمت‌گذاری و کارمزد</h1><p>فاز ۱۰ — منبع قیمت، کش آفلاین، قوانین کارمزد</p></div>
+    <span class="badge">موتور خالص + تست ۳۷/۳۷</span>
+  </div>
+
+  <div class="seg">
+    <span>خلاصه</span><span class="on">قیمت‌ها</span><span>کارمزد</span>
+  </div>
+
+  <!-- قیمت‌ها -->
+  <div class="card">
+    <div class="h"><h2>قیمت لحظه‌ای دارایی‌ها</h2><span class="more">به‌روزرسانی دستی</span></div>
+    <div class="row">
+      <div><div class="nm">طلا ۱۸ عیار</div><div class="dt">واحد: گرم</div></div>
+      <div style="text-align:left"><div class="big" style="margin:0;font-size:18px">۳٬۱۰۰٬۰۰۰</div><span class="live">زنده</span></div>
+    </div>
+    <div class="row">
+      <div><div class="nm">نقره</div><div class="dt">واحد: گرم</div></div>
+      <div style="text-align:left"><div class="big" style="margin:0;font-size:18px">۴٬۲۰۰٬۰۰۰</div><span class="stale">کهنه (آفلاین)</span></div>
+    </div>
+    <div class="row">
+      <div><div class="nm">دلار</div><div class="dt">واحد: دلار</div></div>
+      <div style="text-align:left"><div class="big" style="margin:0;font-size:18px">۱٬۲۳۰٬۰۰۰</div><span class="manual">دستی</span></div>
+    </div>
+  </div>
+
+  <!-- وضعیت منبع -->
+  <div class="card">
+    <div class="h"><h2>وضعیت منابع قیمت</h2><span class="more">اولویت: بالاترین برنده</span></div>
+    <div class="row">
+      <div><div class="nm">دستی (MANUAL)</div><div class="dt">فعال — همیشه در دسترس</div></div>
+      <span class="pct">اولویت ۱</span>
+    </div>
+    <div class="row">
+      <div><div class="nm">API (انفستینگ/چریسما)</div><div class="dt">غیرفعال — آفلاین</div></div>
+      <span class="stale">قطع</span>
+    </div>
+    <div class="row">
+      <div><div class="nm">فایل CSV</div><div class="dt">غیرفعال</div></div>
+      <span class="manual">همراه</span>
+    </div>
+    <p class="note">بند ۸۲: هرگز قیمت «قدیمی» به‌عنوان لحظه‌ای گزارش نمی‌شود؛ از کش آفلاین با برچسب «کهنه» استفاده می‌گردد و به کاربر هشدار داده می‌شود.</p>
+  </div>
+
+  <!-- کارمزد -->
+  <div class="card">
+    <div class="h"><h2>قواعد کارمزد</h2><span class="more">درصدی / ثابت</span></div>
+    <div class="row">
+      <div><div class="nm">خرید طلا — صرافی</div><div class="dt">درصدی — اولویت: صرافی</div></div>
+      <span class="val">۴٪</span>
+    </div>
+    <div class="row">
+      <div><div class="nm">فروش نقره — صرافی</div><div class="dt">درصدی — اولویت: صرافی</div></div>
+      <span class="val">۴٪</span>
+    </div>
+    <div class="row">
+      <div><div class="nm">کارمزد ثابت شاپرک (حساب بانکی)</div><div class="dt">ثابت — اولویت: حساب بانکی</div></div>
+      <span class="val">۱۵٬۰۰۰</span>
+    </div>
+    <div class="row">
+      <div><div class="nm">درصدی — نوع دارایی</div><div class="dt">برای ارز دیجیتال</div></div>
+      <span class="val">۲٪</span>
+    </div>
+  </div>
+
+  <div class="note">🎯 این فاز فقط موتور منطقی است (خالص و تست‌شده)؛ اتصال به پایگاه‌داده Drift و API رسمی قیمت در فازهای انتهایی انجام می‌شود.</div>
+</div>
+
+<div class="foot">
+  <div class="ni"><div class="ic">🏠</div>خانه</div>
+  <div class="ni on"><div class="ic">📊</div>قیمت</div>
+  <div class="ni"><div class="ic">💰</div>دارایی</div>
+  <div class="ni"><div class="ic">🧾</div>سوابق</div>
+</div>
+</body>
+</html>

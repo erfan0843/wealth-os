@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wealth OS — پیش‌نمایش اپ (فاز ۶)</title>
+<style>
+  :root{--bg:#F6F7F9;--surface:#fff;--surAlt:#F1F2F5;--t1:#1A1C1E;--t2:#6B7178;--t3:#9AA0A6;--primary:#135F56;--primarySoft:#E2F0ED;--success:#1F9D61;--error:#D14D4D;--border:#E8EAED;--rLg:16px;--rMd:12px;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Vazirmatn",Tahoma,sans-serif;background:#e9eef0;display:flex;flex-direction:column;align-items:center;padding:24px;color:var(--t1)}
+  .note{background:#fff3d6;border:1px solid #e8c877;color:#7a5a10;border-radius:10px;padding:10px 16px;font-size:13px;max-width:720px;margin-bottom:18px;line-height:1.8}
+  .phone{width:360px;background:var(--bg);border:1px solid var(--border);border-radius:32px;box-shadow:0 22px 50px rgba(19,95,86,.18);overflow:hidden;display:flex;flex-direction:column;min-height:700px}
+  .status{height:28px;background:var(--bg);display:flex;justify-content:space-between;align-items:center;padding:0 22px;font-size:12px;color:var(--t2)}
+  .appbar{display:flex;align-items:center;justify-content:space-between;padding:8px 20px}
+  .appbar .hi{font-size:17px;font-weight:700}
+  .appbar .ic{display:flex;gap:14px;color:var(--t3);font-size:16px}
+  body{padding-top:0}
+  .list{padding:6px 20px 90px;flex:1;overflow:hidden}
+  .hero{background:linear-gradient(135deg,#135F56,#1F7A8C);border-radius:24px;padding:18px;color:#fff}
+  .hero .l{font-size:13px;opacity:.9}
+  .hero .v{font-size:30px;font-weight:800;margin:2px 0 8px;letter-spacing:-.5px}
+  .hero .d{display:inline-block;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:999px;font-size:11px}
+  .hero .grid{display:flex;gap:10px;margin-top:14px}
+  .hero .m{flex:1;background:rgba(255,255,255,.14);border-radius:12px;padding:9px}
+  .hero .m .l{font-size:10px;opacity:.85}
+  .hero .m .v{font-size:15px;font-weight:700;margin-top:2px}
+  .row2{display:flex;gap:12px;margin-top:12px}
+  .mcard{flex:1;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:14px}
+  .mcard .hd{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--t2)}
+  .mcard .dv{font-size:20px;font-weight:800;margin-top:8px}
+  .mcard .dt{font-size:11px;font-weight:700;margin-top:3px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:16px;margin-top:12px}
+  .card .tt{font-size:15px;font-weight:700;margin-bottom:10px}
+  .bar{height:8px;border-radius:999px;background:var(--surAlt);overflow:hidden;margin:6px 0}
+  .bar i{display:block;height:۱۰۰%;background:var(--primary);border-radius:999px}
+  .brow{display:flex;align-items:center;justify-content:space-between;font-size:13px}
+  .brow .n{width:70px}.brow .va{font-size:12px;color:var(--t2)}
+  .sub{font-size:11px;color:var(--t3);margin-top:8px}
+  .row3{display:flex;justify-content:space-between;align-items:center;padding:8px 0;font-size:14px}
+  .row3 .mt{font-weight:700}
+  .row3 .sd{font-size:11px;color:var(--t2)}
+  .nav{position:relative;background:var(--surface);border-top:1px solid var(--border);height:66px;display:flex;align-items:center;justify-content:space-around;border-radius:26px 26px 0 0;margin-top:-30px}
+  .nav .it{display:flex;flex-direction:column;align-items:center;gap:1px;font-size:10px;color:var(--t3);width:48px}
+  .nav .it.on{color:var(--primary);font-weight:700}
+  .nav .it i{font-style:normal;font-size:19px}
+  .fab{position:absolute;top:-22px;left:۵۰%;transform:translateX(-۵۰%);width:56px;height:56px;border-radius:۵۰%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;box-shadow:0 8px 20px rgba(19,95,86,.4)}
+</style>
+</head>
+<body>
+<div class="note">
+  <b>پیش‌نمایش UI — فاز ۶ (بنیان پروژه).</b> این دقیقاً همان چیزی است که اپ Flutter ساخته‌شده رندر می‌کند (کارت قهرمان، کارت‌های سنجه، «پولم کجا رفت؟»، تعهدات آینده، نوار پایین با دکمهٔ مرکزی +). داده‌ها نمونه‌ای‌اند؛ در فازهای بعد به DB واقعی متصل می‌شوند.
+</div>
+<div class="phone">
+  <div class="status"><span>۱۴۰۵/۰۶/۱۲</span><span>▼ کیف پول</span></div>
+  <div class="appbar">
+    <div class="hi">سلام، کاربر 👋</div>
+    <div class="ic"><span>🔍</span><span>🔔</span></div>
+  </div>
+  <div class="list">
+    <div class="hero">
+      <div class="l">دارایی خالص</div>
+      <div class="v">۹۲۰٬۰۰۰٬۰۰۰ تومان</div>
+      <span class="d">▲ ۲٫۱٪ این ماه</span>
+      <div class="grid">
+        <div class="m"><div class="l">کل دارایی</div><div class="v">۱٬۲۵۰ میلیون</div></div>
+        <div class="m"><div class="l">کل بدهی</div><div class="v">۴۸ میلیون</div></div>
+      </div>
+    </div>
+    <div class="row2">
+      <div class="mcard"><div class="hd">📈 درآمد</div><div class="dv">۲۵ میلیون</div><div class="dt" style="color:var(--success)">▲ ۲۵%</div></div>
+      <div class="mcard"><div class="hd">📉 هزینه</div><div class="dv">۱۸٫۵ میلیون</div><div class="dt" style="color:var(--error)">▲ ۱۸%</div></div>
+    </div>
+    <div class="card">
+      <div class="tt">پولم کجا رفت؟</div>
+      <div class="bar"><i style="width:۷۰%"></i></div><div class="brow"><span class="n">خوراک</span><span class="va">۷ م</span></div>
+      <div class="bar"><i style="width:۵۰%"></i></div><div class="brow"><span class="n">حمل‌ونقل</span><span class="va">۳ م</span></div>
+      <div class="bar"><i style="width:۴۲%"></i></div><div class="brow"><span class="n">خرید</span><span class="va">۵ م</span></div>
+      <div class="sub">معادل ۴۲ گرم نقره (قیمت همان زمان)</div>
+    </div>
+    <div class="card">
+      <div class="tt">تعهدات آینده ۳۰ روز <span style="font-size:11px;color:var(--primary);font-weight:600">مشاهدهٔ همه</span></div>
+      <div class="row3"><span>قسط دیجی‌پای</span><div style="text-align:left"><div class="mt">۲٬۰۰۰٬۰۰۰</div><div class="sd">۵ روز مانده</div></div></div>
+      <div class="row3"><span>چک دریافتی</span><div style="text-align:left"><div class="mt">۳٬۰۰۰٬۰۰۰</div><div class="sd">۹ روز مانده</div></div></div>
+    </div>
+  </div>
+  <div class="nav">
+    <div class="it on"><i>●</i>خانه</div>
+    <div class="it"><i>≡</i>تراکنش‌ها</div>
+    <div class="fab">+</div>
+    <div class="it"><i>◈</i>دارایی‌ها</div>
+    <div class="it"><i>◉</i>آینده</div>
+  </div>
+</div>
+</body>
+</html>

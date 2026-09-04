@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wealth OS — پیش‌نمایش فاز ۹ (موتور دارایی)</title>
+<style>
+  :root{--bg:#F6F7F9;--surface:#fff;--surAlt:#F1F2F5;--t1:#1A1C1E;--t2:#6B7178;--t3:#9AA0A6;--primary:#135F56;--success:#1F9D61;--error:#D14D4D;--warning:#E0A03C;--border:#E8EAED;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Vazirmatn",Tahoma,sans-serif;background:#e9eef0;display:flex;flex-direction:column;align-items:center;padding:24px;color:var(--t1)}
+  .note{background:#e8f6ee;border:1px solid #b7e0c9;color:#1a6b3a;border-radius:10px;padding:10px 16px;font-size:13px;max-width:760px;margin-bottom:18px;line-height:1.8}
+  .note b{color:#0d5a2e}
+  .phone{width:360px;background:var(--bg);border:1px solid var(--border);border-radius:32px;box-shadow:0 22px 50px rgba(19,95,86,.18);overflow:hidden;display:flex;flex-direction:column;min-height:700px}
+  .status{height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 22px;font-size:12px;color:var(--t2)}
+  .appbar{display:flex;align-items:center;justify-content:space-between;padding:8px 20px}
+  .appbar .hi{font-size:17px;font-weight:700}.appbar .ic{display:flex;gap:14px;color:var(--t3);font-size:16px}
+  body{padding-top:0}
+  .list{padding:6px 20px 90px;flex:1;overflow:hidden}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .kpi{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:14px}
+  .kpi .l{font-size:12px;color:var(--t2)}
+  .kpi .v{font-size:22px;font-weight:800;margin-top:4px}
+  .kpi .s{font-size:11px;font-weight:700;margin-top:2px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:16px;margin-top:12px}
+  .card .tt{font-size:15px;font-weight:700;margin-bottom:10px}
+  .row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:14px}
+  .row:last-child{border-bottom:none}
+  .row .r{text-align:left}
+  .row .lbl{font-size:12px;color:var(--t2)}
+  .badge{font-size:10px;padding:2px 8px;border-radius:999px;font-weight:600;background:#e8f6ee;color:#1a6b3a}
+  .badge.w{background:#fbefd8;color:#c98a1e}.badge.e{background:#fbe6e6;color:#b23a3a}
+  .up{color:var(--success)}.down{color:var(--error)}
+  .lot{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--border);font-size:13px}
+  .lot:last-child{border-bottom:none}
+  .nav{position:relative;background:var(--surface);border-top:1px solid var(--border);height:66px;display:flex;align-items:center;justify-content:space-around;border-radius:26px 26px 0 0;margin-top:-30px}
+  .nav .it{display:flex;flex-direction:column;align-items:center;gap:1px;font-size:10px;color:var(--t3);width:48px}
+  .nav .it.on{color:var(--primary);font-weight:700}.nav .it i{font-style:normal;font-size:19px}
+  .fab{position:absolute;top:-22px;left:۵۰%;transform:translateX(-۵۰%);width:56px;height:56px;border-radius:۵۰%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;box-shadow:0 8px 20px rgba(19,95,86,.4)}
+</style>
+</head>
+<body>
+<div class="note">
+  <b>فاز ۹ — موتور دارایی.</b> دارایی ژنریک (نقره/طلا/ارز/سهم/ملک/...)، هر نوبت خرید یک <b>سهم (Lot)</b>، <b>هزینهٔ تمام‌شده (میانگین)</b>، <b>سود/زیان تحقق‌یافته و تحقق‌نیافته</b>. خرید/فروش دارایی = مبادله، نه هزینه/درآمد. با ۲۷ تست سبز.
+</div>
+<div class="phone">
+  <div class="status"><span>۱۲ شهریور ۱۴۰۵</span><span>نقره</span></div>
+  <div class="appbar">
+    <div class="hi">🏆 نقره</div>
+    <div class="ic"><span>🖉</span><span>⋮</span></div>
+  </div>
+  <div class="list">
+    <div class="cards">
+      <div class="kpi"><div class="l">ارزش فعلی</div><div class="v">۹٫۵ میلیون</div><div class="s up">▲ سود تحقق‌نیافته +۴٪</div></div>
+      <div class="kpi"><div class="l">موجودی</div><div class="v">۲۵۰ گرم</div><div class="s">سهم میانگین ۲٬۰۸۰</div></div>
+    </div>
+    <div class="card">
+      <div class="tt">Cost Basis (هزینهٔ تمام‌شده — میانگین)</div>
+      <div class="row"><span>میانگین هر گرم</span><span class="r">۲٬۰۸۰٬۰۰۰</span></div>
+      <div class="row"><span>قیمت فعلی</span><span class="r">۳۸٬۰۰۰</span></div>
+      <div class="row"><span>سود تحقق‌یافته (فروش‌ها)</span><span class="r up">+۱۲۰٬۰۰۰</span></div>
+    </div>
+    <div class="card">
+      <div class="tt">سهم‌های خرید (Lots)</div>
+      <div class="lot"><span>سهم ۱ · ۱۰۰ گرم</span><span class="r">@ ۲٬۰۰۰٬۰۰۰</span></div>
+      <div class="lot"><span>سهم ۲ · ۱۵۰ گرم</span><span class="r">@ ۲٬۱۲۰٬۰۰۰</span></div>
+    </div>
+    <div class="card">
+      <div class="tt">تاریخچهٔ قیمت</div>
+      <div style="height:46px;background:var(--surAlt);border-radius:10px;position:relative">
+        <div style="position:absolute;inset:8px;background:linear-gradient(to top,#135F56 ۰%,rgba(19,95,86,.1) ۷۰%);border-radius:10px"></div>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;margin-top:14px">
+      <div class="kpi" style="flex:1"><div class="l">+ خرید</div><div class="v">۲۵۰g</div></div>
+      <div class="kpi" style="flex:1"><div class="l">− فروش</div><div class="v">۱۰g</div></div>
+    </div>
+  </div>
+  <div class="nav">
+    <div class="it"><i>●</i>خانه</div><div class="it"><i>≡</i>تراکنش‌ها</div><div class="fab">+</div><div class="it on"><i>◈</i>دارایی‌ها</div><div class="it"><i>◉</i>آینده</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wealth OS — پیش‌نمایش فاز ۸ (دفتر کل مالی)</title>
+<style>
+  :root{--bg:#F6F7F9;--surface:#fff;--surAlt:#F1F2F5;--t1:#1A1C1E;--t2:#6B7178;--t3:#9AA0A6;--primary:#135F56;--success:#1F9D61;--error:#D14D4D;--border:#E8EAED;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Vazirmatn",Tahoma,sans-serif;background:#e9eef0;display:flex;flex-direction:column;align-items:center;padding:24px;color:var(--t1)}
+  .note{background:#e8f6ee;border:1px solid #b7e0c9;color:#1a6b3a;border-radius:10px;padding:10px 16px;font-size:13px;max-width:740px;margin-bottom:18px;line-height:1.8}
+  .note b{color:#0d5a2e}
+  .phone{width:360px;background:var(--bg);border:1px solid var(--border);border-radius:32px;box-shadow:0 22px 50px rgba(19,95,86,.18);overflow:hidden;display:flex;flex-direction:column;min-height:720px}
+  .status{height:28px;display:flex;justify-content:space-between;align-items:center;padding:0 22px;font-size:12px;color:var(--t2)}
+  .appbar{display:flex;align-items:center;justify-content:space-between;padding:8px 20px}
+  .appbar .hi{font-size:17px;font-weight:700}
+  .appbar .ic{display:flex;gap:14px;color:var(--t3);font-size:16px}
+  body{padding-top:0}
+  .list{padding:6px 20px 90px;flex:1;overflow:hidden}
+  .hero{background:linear-gradient(135deg,#135F56,#1F7A8C);border-radius:24px;padding:18px;color:#fff}
+  .hero .l{font-size:13px;opacity:.9}
+  .hero .v{font-size:30px;font-weight:800;margin:2px 0 8px}
+  .hero .d{display:inline-block;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:999px;font-size:11px}
+  .hero .grid{display:flex;gap:10px;margin-top:14px}
+  .hero .m{flex:1;background:rgba(255,255,255,.14);border-radius:12px;padding:9px}
+  .hero .m .l{font-size:10px;opacity:.85}
+  .hero .m .v{font-size:15px;font-weight:700;margin-top:2px}
+  .row2{display:flex;gap:12px;margin-top:12px;margin-bottom:12px}
+  .mcard{flex:1;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:14px}
+  .mcard .tt{font-size:15px;font-weight:700}
+  .mcard .lv{font-size:22px;font-weight:800;margin-top:6px}
+  .mcard .lg{font-size:12px;color:var(--t2);margin-top:2px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:16px;margin-top:12px}
+  .card .tt{font-size:15px;font-weight:700;margin-bottom:10px}
+  .mon{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--border);font-size:14px}
+  .mon:last-child{border-bottom:none}
+  .mon .amt{font-weight:700}
+  .up{color:var(--success)} .down{color:var(--error)}
+  .nav{position:relative;background:var(--surface);border-top:1px solid var(--border);height:66px;display:flex;align-items:center;justify-content:space-around;border-radius:26px 26px 0 0;margin-top:-30px}
+  .nav .it{display:flex;flex-direction:column;align-items:center;gap:1px;font-size:10px;color:var(--t3);width:48px}
+  .nav .it.on{color:var(--primary);font-weight:700}
+  .nav .it i{font-style:normal;font-size:19px}
+  .fab{position:absolute;top:-22px;left:۵۰%;transform:translateX(-۵۰%);width:56px;height:56px;border-radius:۵۰%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;box-shadow:0 8px 20px rgba(19,95,86,.4)}
+  .badge{font-size:10px;padding:2px 7px;border-radius:999px;font-weight:600;background:#e8f6ee;color:#1a6b3a}
+  .badge.w{background:#fbefd8;color:#c98a1e}
+</style>
+</head>
+<body>
+<div class="note">
+  <b>فاز ۸ — دفترکل مالی در حال کار است.</b> «دارایی خالص = کل دارایی − کل بدهی»، «نقدینگی» جدا از طلب‌ها (C11)، «انتقال خنثی»، «خرید/فروش دارایی = مبادله نه هزینه/درآمد». این اعداد از موتور محاسبه‌ای که با ۱۹ تست سبز تأیید شد می‌آیند.
+</div>
+<div class="phone">
+  <div class="status"><span>۱۲ شهریور ۱۴۰۵</span><span>ساعت ۱۶:۰۲</span></div>
+  <div class="appbar">
+    <div class="hi">سلام، علی 👋</div>
+    <div class="ic"><span>🔍</span><span>🔔</span></div>
+  </div>
+  <div class="list">
+    <div class="hero">
+      <div class="l">دارایی خالص (آفلاین)</div>
+      <div class="v">۱٬۱۲۰٬۰۰۰٬۰۰۰ تومان</div>
+      <span class="d">▲ ۳٫۴٪ این ماه</span>
+      <div class="grid">
+        <div class="m"><div class="l">کل دارایی</div><div class="v">۱٬۲۰۰ میلیون</div></div>
+        <div class="m"><div class="l">کل بدهی</div><div class="v">۸۰ میلیون</div></div>
+      </div>
+    </div>
+    <div class="row2">
+      <div class="mcard"><div class="tt">💧 نقدینگی</div><div class="lv">۲۴۵ میلیون</div><div class="lg">نقد + بانک + نقدشونده</div></div>
+      <div class="mcard"><div class="tt">📥 طلب‌ها</div><div class="lv">۳۰ میلیون</div><div class="lg"><span class="badge">در خالص، نه نقدینگی</span></div></div>
+    </div>
+    <div class="card">
+      <div class="tt">تراکنش‌های اخیر</div>
+      <div class="mon"><span>خرید ۲۰ گرم نقره <span class="badge">مبادله</span></span><span class="amt down">−۸۰٬۰۰۰</span></div>
+      <div class="mon"><span>انتقال ملت → پاسارگاد <span class="badge w">خنثی</span></span><span class="amt">ـ</span></div>
+      <div class="mon"><span>هزینهٔ ناهار</span><span class="amt down">−۳۵۰٬۰۰۰</span></div>
+      <div class="mon"><span>فروش ۱۰ گرم نقره <span class="badge">مبادله</span></span><span class="amt up">+۹۰۰٬۰۰۰</span></div>
+    </div>
+    <div class="card">
+      <div class="tt">پولم کجا رفت؟</div>
+      <div class="mon"><span>خوراک</span><span>۷ م</span></div>
+      <div class="mon"><span>حمل‌ونقل</span><span>۳ م</span></div>
+      <div class="mon"><span>خرید</span><span>۵ م</span></div>
+    </div>
+  </div>
+  <div class="nav">
+    <div class="it on"><i>●</i>خانه</div>
+    <div class="it"><i>≡</i>تراکنش‌ها</div>
+    <div class="fab">+</div>
+    <div class="it"><i>◈</i>دارایی‌ها</div>
+    <div class="it"><i>◉</i>آینده</div>
+  </div>
+</div>
+</body>
+</html>

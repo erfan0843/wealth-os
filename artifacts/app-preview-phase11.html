@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>پیش‌نمایش فاز ۱۱ — بدهی‌ها و تعهدات</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;800&display=swap');
+  :root{
+    --bg:#f5f5f7; --bg-dark:#121417; --sg:#e9ecf0; --sg-d:#1e2228;
+    --txt:#1a1c1e; --txt-d:#e8eaed; --txt2:#6b7178; --txt2-d:#9aa2ab;
+    --p:#135f56; --p2:#1f9d61; --err:#d9534f; --warn:#b8860b; --wl:#fdf6e3; --wl-d:#2a251a;
+  }
+  *{box-sizing:border-box; font-family:'Vazirmatn',Vazir,system-ui,sans-serif;}
+  body{margin:0; background:var(--bg); color:var(--txt);}
+  .dark body{background:var(--bg-dark); color:var(--txt-d);}
+  .wrap{max-width:430px; margin:0 auto; padding:20px 18px 90px;}
+  .top{display:flex; align-items:center; gap:12px; margin-bottom:18px;}
+  .top .t{flex:1;}
+  .top h1{font-size:18px; font-weight:800; margin:0;}
+  .top p{margin:2px 0 0; font-size:12px; color:var(--txt2);}
+  .badge{font-size:11px; font-weight:700; padding:4px 10px; border-radius:999px; background:var(--p); color:#fff; white-space:nowrap;}
+  .card{background:#fff; border-radius:18px; padding:16px; box-shadow:0 2px 12px rgba(0,0,0,.05); margin-bottom:14px;}
+  .dark .card{background:var(--sg-d);}
+  .card .h{display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;}
+  .card .h h2{font-size:15px; font-weight:700; margin:0;}
+  .card .h .more{font-size:12px; color:var(--p);}
+  .label{font-size:12px; color:var(--txt2);}
+  .dark .label{color:var(--txt2-d);}
+  .big{font-size:26px; font-weight:800; margin:2px 0;}
+  .row{display:flex; align-items:center; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--sg);}
+  .dark .row{border-color:#2a313a;}
+  .row:last-child{border-bottom:none;}
+  .row .nm{font-size:13.5px; font-weight:600;}
+  .row .dt{font-size:11.5px; color:var(--txt2); margin-top:2px;}
+  .dark .row .dt{color:var(--txt2-d);}
+  .val{font-size:13px; font-weight:700; color:var(--p);}
+  .chip{font-size:10.5px; padding:2px 8px; border-radius:999px; font-weight:700;}
+  .c-pend{background:var(--wl); color:var(--warn); border:1px solid #e8d9a8;}
+  .c-live{background:#e7f6ee; color:#1f9d61;}
+  .c-err{background:#fbe9e9; color:var(--err);}
+  .c-ok{background:#e7f6ee; color:#1f9d61;}
+  .tbl{width:100%; border-collapse:collapse; font-size:12.5px;}
+  .tbl th{color:var(--txt2); font-weight:600; text-align:right; padding:6px 4px; border-bottom:1px solid var(--sg);}
+  .dark .tbl th{color:var(--txt2-d);}
+  .tbl td{padding:8px 4px; border-bottom:1px solid var(--sg);}
+  .dark .tbl td{border-color:#2a313a;}
+  .tbl td:first-child{border-bottom:none;}
+  .tbl td:last-child{border-bottom:none;}
+  .note{font-size:11px; color:var(--txt2); background:#fdfbea; border:1px solid #efe6b8; border-radius:12px; padding:10px 12px; margin-top:4px; line-height:1.9;}
+  .dark .note{background:var(--wl-d); border-color:#4a3f22; color:var(--txt2-d);}
+  .foot{position:fixed; left:0; right:0; bottom:0; height:68px; background:#fff; border-top:1px solid var(--sg); display:flex; align-items:center; justify-content:space-around; max-width:430px; margin:0 auto;}
+  .dark .foot{background:var(--sg-d); border-color:#2a313a;}
+  .foot .ni{text-align:center; font-size:10.5px; color:var(--txt2);}
+  .dark .foot .ni{color:var(--txt2-d);}
+  .foot .ni .ic{font-size:20px;}
+  .foot .ni.on{color:var(--p); font-weight:700;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="t"><h1>بدهی‌ها و تعهدات</h1><p>فاز ۱۱ — وام، اقساط، چک، تعهدات دوره‌ای</p></div>
+    <span class="badge">امروز ۱۲ شهریور ۱۴۰۵</span>
+  </div>
+
+  <!-- کارت پایانی -->
+  <div class="card">
+    <div class="h"><h2>وضعیت بدهی/طلب</h2><span class="more">به‌روز</span></div>
+    <div class="label">بدهی خالص</div>
+    <div class="big">۴۸٬۰۰۰٬۰۰۰</div>
+    <div class="row" style="border-bottom:none;padding-top:6px">
+      <div><span class="label">بدهی</span><div class="val">۹۳٬۰۰۰٬۰۰۰</div></div>
+      <div><span class="label">طلب</span><div class="val">۴۵٬۰۰۰٬۰۰۰</div></div>
+    </div>
+  </div>
+
+  <!-- هشدار معوق -->
+  <div class="card" style="border:1px solid #f0d9d9">
+    <div class="h"><h2>هشدار معوّق</h2><span class="chip c-err">۲ مورد</span></div>
+    <div class="row">
+      <div><div class="nm">قسط ۳ — وام خودرو</div><div class="dt">سررسید ۵ شهریور — ۷ روز تأخیر</div></div>
+      <span class="val">۱٬۰۰۰٬۰۰۰</span>
+    </div>
+    <div class="row">
+      <div><div class="nm">چک ۲۰۰۳ — پرداختی</div><div class="dt">سررسید ۱ شهریور</div></div>
+      <span class="val">۳٬۰۰۰٬۰۰۰</span>
+    </div>
+  </div>
+
+  <!-- وام + برنامه اقساط -->
+  <div class="card">
+    <div class="h"><h2>وام خودرو</h2><span class="more">۱۲ قسط ماهانه · ۲۴٪ سالانه</span></div>
+    <div class="row" style="border-bottom:none">
+      <div><span class="label">قیمت اصلی</span><div class="val">۱۲٬۰۰۰٬۰۰۰</div></div>
+      <div><span class="label">بهرهٔ کل</span><div class="val">۲٬۹۷۳٬۰۰۰</div></div>
+    </div>
+    <table class="tbl">
+      <tr><th>#</th><th>سررسید</th><th>اصل</th><th>بهره</th><th>وضعیت</th></tr>
+      <tr><td>۱</td><td>۱ بهمن ۱۴۰۴</td><td>۸۳۰٬۰۰۰</td><td>۲۴۰٬۰۰۰</td><td><span class="chip c-ok">پرداخت</span></td></tr>
+      <tr><td>۲</td><td>۱ اسفند ۱۴۰۴</td><td>۸۴۷٬۰۰۰</td><td>۲۲۳٬۰۰۰</td><td><span class="chip c-ok">پرداخت</span></td></tr>
+      <tr><td>۳</td><td>۱ فروردین ۱۴۰۵</td><td>۸۶۴٬۰۰۰</td><td>۲۰۶٬۰۰۰</td><td><span class="chip c-err">معوّق</span></td></tr>
+      <tr><td>۴</td><td>۱ اردیبهشت ۱۴۰۵</td><td>۸۸۱٬۰۰۰</td><td>۱۸۹٬۰۰۰</td><td><span class="chip c-pend">در انتظار</span></td></tr>
+      <tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+    </table>
+  </div>
+
+  <!-- چک‌ها -->
+  <div class="card">
+    <div class="h"><h2>چک‌ها</h2><span class="more">دریافتی / پرداختی</span></div>
+    <div class="row">
+      <div><div class="nm">چک ۱۰۰۱ — دریافتی</div><div class="dt">مشتری · سررسید ۵ مهر ۱۴۰۵</div></div>
+      <span class="chip c-live">در انتظار</span>
+    </div>
+    <div class="row">
+      <div><div class="nm">چک ۲۰۰۳ — پرداختی</div><div class="dt">تأمین‌کننده · سررسید ۱ شهریور</div></div>
+      <span class="chip c-err">معوّق</span>
+    </div>
+  </div>
+
+  <!-- تعهدات دورهای -->
+  <div class="card">
+    <div class="h"><h2>تعهدات دوره‌ای</h2><span class="more">ماهانه</span></div>
+    <div class="row">
+      <div><div class="nm">اجاره</div><div class="dt">هر ماه · سررسید بعدی ۱ مهر</div></div>
+      <span class="val">۹٬۰۰۰٬۰۰۰</span>
+    </div>
+    <div class="row">
+      <div><div class="nm">اشتراک ویدیو</div><div class="dt">هر ماه · سررسید بعدی ۱۸ مهر</div></div>
+      <span class="val">۳۰۰٬۰۰۰</span>
+    </div>
+  </div>
+
+  <div class="note">🎯 فاز ۱۱ موتور خالص بدهی‌هاست (Amortization، مانده، معوّق، تعهد دورهای) — بدون Flutter/DB و با ۸ تست. جدول/قاعده‌های Drift در فاز پایانی.</div>
+</div>
+
+<div class="foot">
+  <div class="ni"><div class="ic">🏠</div>خانه</div>
+  <div class="ni on"><div class="ic">📅</div>تعهدات</div>
+  <div class="ni"><div class="ic">💰</div>دارایی</div>
+  <div class="ni"><div class="ic">🧾</div>سوابق</div>
+</div>
+</body>
+</html>
